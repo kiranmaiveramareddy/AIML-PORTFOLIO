@@ -1,5 +1,5 @@
 AI & ML Portfolio
-Hi, I'm Kiran Maiverama Reddy.
+Hi, I'm Kiranmai Veramareddy.
 
 Aspiring Artificial Intelligence and Machine Learning Engineer.
 
