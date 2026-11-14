@@ -3,562 +3,385 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kiranmai Veramareddy | AI/ML Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<title>Kiranmai Veramareddy | Full Stack Java &amp; AI Engineer</title>
+<meta name="description" content="Full stack Java engineer with 6+ years of experience and 1 year building with AI. Domains: media, e-commerce and BFSI."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --ink:    #0d1117;
-  --paper:  #f6f7f9;
-  --mid:    #e8eaf0;
-  --muted:  #6b7385;
-  --accent: #0ea5e9;
-  --white:  #ffffff;
-  --border: #dde1ea;
+  --deep:    #10302e;   /* deep teal, hero + dark sections */
+  --deep-2:  #17413e;
+  --paper:   #f1f5f3;   /* cool mint-grey page background */
+  --soft:    #e1ebe7;
+  --white:   #ffffff;
+  --teal:    #0f766e;   /* primary accent on light */
+  --amber:   #f5a524;   /* accent on dark */
+  --amber-d: #9a5b00;   /* amber text on light */
+  --ink:     #14201f;
+  --muted:   #526561;
+  --line:    #d2dfda;
+  --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body:    'Public Sans', 'Segoe UI', system-ui, sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden;}
+html{scroll-behavior:smooth;scroll-padding-top:72px;}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7;overflow-x:hidden;}
+a{color:inherit;}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(246,247,249,0.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;}
-.nav-logo span{color:var(--accent);}
-nav ul{list-style:none;display:flex;gap:2rem;}
-nav ul a{font-size:0.85rem;font-weight:500;text-decoration:none;color:var(--muted);letter-spacing:0.04em;text-transform:uppercase;transition:color .2s;}
-nav ul a:hover{color:var(--accent);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:64px;background:rgba(16,48,46,0.94);backdrop-filter:blur(12px);}
+.nav-logo{font-family:var(--display);font-weight:800;font-size:1.1rem;color:var(--white);text-decoration:none;letter-spacing:-0.01em;}
+.nav-logo i{font-style:normal;color:var(--amber);}
+nav ul{list-style:none;display:flex;gap:1.8rem;}
+nav ul a{font-size:0.92rem;font-weight:500;text-decoration:none;color:rgba(255,255,255,0.75);transition:color .2s;}
+nav ul a:hover{color:var(--amber);}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:64px 8% 0;gap:4rem;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-120px;right:-160px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.10) 0%,transparent 70%);pointer-events:none;}
-.hero-tag{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(14,165,233,0.35);padding:5px 14px;border-radius:50px;margin-bottom:1.4rem;animation:fadeUp .6s ease both;}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:var(--ink);animation:fadeUp .7s .1s ease both;}
-.hero h1 .line2{color:var(--accent);}
-.hero-sub{margin-top:1.2rem;font-size:1.05rem;font-weight:300;color:var(--muted);max-width:480px;animation:fadeUp .7s .2s ease both;}
-.hero-cta{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .3s ease both;}
-.btn-primary{display:inline-block;padding:12px 28px;background:var(--ink);color:var(--white);border-radius:8px;font-size:0.9rem;font-weight:500;text-decoration:none;transition:background .2s,transform .15s;}
-.btn-primary:hover{background:var(--accent);transform:translateY(-2px);}
-.btn-outline{display:inline-block;padding:12px 28px;border:1.5px solid var(--border);color:var(--ink);border-radius:8px;font-size:0.9rem;font-weight:500;text-decoration:none;transition:border-color .2s,color .2s,transform .15s;}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
-.hero-visual{animation:fadeUp .8s .2s ease both;}
-.hero-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.07);}
-.hero-card-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;}
-.skill-pill{display:inline-block;margin:5px 5px 5px 0;padding:6px 15px;background:var(--mid);border-radius:50px;font-size:0.8rem;font-weight:500;color:var(--ink);transition:background .2s,color .2s;}
-.skill-pill:hover{background:var(--accent);color:#fff;}
-.skill-pill.accent{background:rgba(14,165,233,0.12);color:var(--accent);}
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
-.stat{text-align:center;}
-.stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--ink);}
-.stat-desc{font-size:0.75rem;color:var(--muted);}
+.hero{background:var(--deep);color:var(--white);padding:140px 8% 90px;}
+.hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;}
+.hero-intro{font-size:1rem;color:var(--amber);font-weight:500;margin-bottom:1rem;}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,5.4vw,4.4rem);line-height:1.04;letter-spacing:-0.035em;max-width:14ch;}
+.hero-sub{margin-top:1.5rem;font-size:1.08rem;font-weight:300;color:rgba(255,255,255,0.78);max-width:56ch;}
+.hero-cta{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-block;padding:13px 26px;border-radius:8px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:transform .15s,background .2s,border-color .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--amber);color:#2a1a00;}
+.btn-primary:hover{background:#ffb83d;}
+.btn-ghost{border:1.5px solid rgba(255,255,255,0.35);color:var(--white);}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+
+.numbers{display:flex;gap:0;margin-top:3.2rem;border-top:1px solid rgba(255,255,255,0.18);}
+.num{flex:1;padding:1.3rem 1.2rem 0 0;}
+.num + .num{padding-left:1.4rem;border-left:1px solid rgba(255,255,255,0.18);}
+.num b{display:block;font-family:var(--display);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1;letter-spacing:-0.03em;color:var(--white);}
+.num span{display:block;margin-top:0.5rem;font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.4;}
+
+.stack-card{background:var(--deep-2);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.8rem;}
+.stack-card h2{font-family:var(--display);font-size:1.05rem;font-weight:700;margin-bottom:1.2rem;color:var(--white);}
+.stack-group + .stack-group{margin-top:1.15rem;}
+.stack-group h3{font-size:0.85rem;font-weight:600;color:var(--amber);margin-bottom:0.45rem;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;}
+.chip{padding:4px 12px;border-radius:6px;font-size:0.84rem;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.9);}
 
 /* SECTIONS */
-section{padding:100px 8%;}
-.section-label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.75rem;}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;color:var(--ink);margin-bottom:1.5rem;}
-.section-title span{color:var(--accent);}
-.divider{width:48px;height:3px;background:var(--accent);border-radius:2px;margin-bottom:2rem;}
+section{padding:96px 8%;}
+.wrap{max-width:1100px;margin:0 auto;}
+.section-title{font-family:var(--display);font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:800;letter-spacing:-0.03em;line-height:1.12;color:var(--ink);max-width:22ch;}
+.section-lead{margin-top:1rem;color:var(--muted);max-width:62ch;font-weight:300;font-size:1.05rem;}
 
-/* BIO */
-#bio{background:var(--white);}
-.bio-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:center;}
-.bio-text p{color:var(--muted);margin-bottom:1rem;font-weight:300;}
-.bio-text p strong{color:var(--ink);font-weight:500;}
-.bio-sidebar{background:var(--paper);border:1px solid var(--border);border-radius:16px;padding:2rem;}
-.bio-sidebar h4{font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;letter-spacing:0.04em;margin-bottom:1rem;color:var(--ink);}
-.info-row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.9rem;}
-.info-row .ico{width:32px;height:32px;flex-shrink:0;background:rgba(14,165,233,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;}
-.info-row .info-content label{display:block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:1px;}
-.info-row .info-content span{font-size:0.9rem;font-weight:500;color:var(--ink);}
+/* ABOUT */
+#about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:5rem;margin-top:2.5rem;align-items:start;}
+.about-text p{color:var(--muted);margin-bottom:1.1rem;max-width:62ch;}
+.about-text p strong{color:var(--ink);font-weight:600;}
+.facts{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0.6rem 1.6rem;}
+.fact{display:grid;grid-template-columns:110px 1fr;gap:1rem;padding:0.95rem 0;border-bottom:1px solid var(--line);}
+.fact:last-child{border-bottom:none;}
+.fact dt{font-size:0.88rem;color:var(--muted);}
+.fact dd{font-size:0.95rem;font-weight:500;}
 
-  
-/* VALUE */
-#value{background:var(--ink);color:var(--white);}
-#value .section-label{color:#06b6d4;}
-#value .section-title{color:var(--white);}
-#value .section-title span{color:var(--accent);}
-.vp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
-.vp-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:2rem;transition:border-color .2s,background .2s;}
-.vp-card:hover{background:rgba(14,165,233,0.08);border-color:rgba(14,165,233,0.4);}
-.vp-icon{font-size:1.8rem;margin-bottom:1rem;}
-.vp-card h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;}
-.vp-card p{font-size:0.88rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.65;}
-.vp-statement{margin-top:3rem;padding:2.5rem;border:1px solid rgba(14,165,233,0.3);border-radius:16px;background:rgba(14,165,233,0.05);}
-.vp-statement p{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.8;}
-.vp-statement p strong{color:var(--white);font-weight:500;}
+/* DOMAINS */
+#domains{background:var(--soft);}
+.domain-list{margin-top:2.5rem;border-top:2px solid var(--ink);}
+.domain{display:grid;grid-template-columns:200px 1fr 1fr;gap:2rem;padding:1.8rem 0;border-bottom:1px solid var(--line);align-items:start;}
+.domain h3{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;}
+.domain p{color:var(--muted);font-size:0.97rem;}
+.domain p b{display:block;color:var(--ink);font-weight:600;font-size:0.88rem;margin-bottom:0.2rem;}
 
-/* ARTIFACTS */
-#artifacts{background:var(--paper);}
-.artifacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem;}
-.artifact-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow .25s,transform .2s;}
-.artifact-card:hover{box-shadow:0 16px 48px rgba(0,0,0,0.09);transform:translateY(-4px);}
-.artifact-card.placeholder{opacity:0.55;border-style:dashed;}
-.artifact-header{padding:1.6rem 2rem 0;display:flex;align-items:flex-start;justify-content:space-between;}
-.artifact-num{font-family:'Syne',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:rgba(14,165,233,0.1);padding:4px 12px;border-radius:50px;}
-.artifact-tag{font-size:0.72rem;font-weight:500;background:var(--mid);color:var(--muted);padding:4px 12px;border-radius:50px;}
-.artifact-body{padding:1.2rem 2rem 2rem;}
-.artifact-body h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;}
-.meta-row{display:grid;grid-template-columns:110px 1fr;gap:0.5rem 1rem;align-items:baseline;padding:0.55rem 0;border-bottom:1px solid var(--mid);}
-.meta-row:last-child{border-bottom:none;}
-.meta-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;}
-.meta-value{font-size:0.87rem;color:var(--ink);font-weight:300;}
-.coming-soon-wrap{margin-top:3rem;}
-.coming-soon-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:1.2rem;}
-.placeholder-row{display:flex;gap:1rem;flex-wrap:wrap;}
-.placeholder-pill{padding:10px 20px;border:1.5px dashed var(--border);border-radius:50px;font-size:0.82rem;color:var(--muted);}
+/* SKILLS / EXPERIENCE */
+#skills{background:var(--white);}
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.5rem;}
+.skill-box{border:1px solid var(--line);border-radius:12px;padding:1.6rem 1.7rem;background:var(--paper);}
+.skill-box h3{font-family:var(--display);font-size:1.15rem;font-weight:700;margin-bottom:0.3rem;}
+.skill-box .yrs{font-size:0.88rem;color:var(--amber-d);font-weight:600;margin-bottom:0.9rem;}
+.skill-box .chip{background:var(--white);border:1px solid var(--line);color:var(--ink);}
+.skill-box.ai{background:var(--deep);border-color:var(--deep);color:var(--white);}
+.skill-box.ai .yrs{color:var(--amber);}
+.skill-box.ai .chip{background:rgba(255,255,255,0.1);border-color:transparent;color:var(--white);}
+
+/* PROJECTS */
+#projects{background:var(--paper);}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2.5rem;}
+.project{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:1.8rem 1.9rem 1.9rem;display:flex;flex-direction:column;}
+.project-tag{align-self:flex-start;font-size:0.82rem;font-weight:600;color:var(--teal);background:rgba(15,118,110,0.1);padding:3px 12px;border-radius:6px;margin-bottom:0.9rem;}
+.project h3{font-family:var(--display);font-size:1.2rem;font-weight:700;line-height:1.25;letter-spacing:-0.01em;margin-bottom:1rem;}
+.row{padding:0.65rem 0;border-top:1px solid var(--soft);}
+.row dt{font-size:0.82rem;font-weight:600;color:var(--muted);margin-bottom:2px;}
+.row dd{font-size:0.92rem;color:var(--ink);font-weight:300;}
+.project .link{margin-top:auto;padding-top:1.2rem;}
+.project .link a{display:inline-block;padding:8px 18px;background:var(--teal);color:var(--white);border-radius:8px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:background .2s;}
+.project .link a:hover{background:var(--deep);}
+.more-note{margin-top:2rem;color:var(--muted);font-weight:300;max-width:62ch;}
+.more-note a{color:var(--teal);font-weight:600;}
 
 /* CONTACT */
-#contact{background:var(--white);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-.contact-text p{color:var(--muted);font-weight:300;margin-bottom:1rem;}
-.contact-links{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
-.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);transition:border-color .2s,background .2s;}
-.contact-link:hover{border-color:var(--accent);background:rgba(14,165,233,0.04);}
-.contact-link .lico{width:40px;height:40px;border-radius:10px;background:var(--mid);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-.contact-link .ltext label{display:block;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);}
-.contact-link .ltext span{font-size:0.9rem;font-weight:500;}
-.instruction-box{background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.2);border-radius:14px;padding:2rem;}
-.instruction-box h4{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:1rem;}
-.instruction-box ol{padding-left:1.3rem;}
-.instruction-box li{font-size:0.88rem;color:var(--muted);margin-bottom:0.6rem;font-weight:300;}
-.instruction-box li strong{color:var(--ink);font-weight:500;}
-code{font-family:'Courier New',monospace;font-size:0.82rem;background:var(--mid);padding:2px 7px;border-radius:5px;color:var(--accent);}
+#contact{background:var(--deep);color:var(--white);}
+#contact .section-title{color:var(--white);}
+#contact .section-lead{color:rgba(255,255,255,0.75);}
+.contact-link{display:inline-flex;align-items:center;gap:1rem;margin-top:2rem;padding:1rem 1.5rem;border:1.5px solid rgba(255,255,255,0.3);border-radius:10px;text-decoration:none;color:var(--white);transition:border-color .2s,background .2s;}
+.contact-link:hover{border-color:var(--amber);background:rgba(255,255,255,0.05);}
+.contact-link small{display:block;font-size:0.8rem;color:var(--amber);}
+.contact-link span{font-weight:500;word-break:break-all;}
 
-/* FOOTER */
-footer{background:var(--ink);color:rgba(255,255,255,0.4);text-align:center;padding:2.5rem 8%;font-size:0.82rem;}
-footer span{color:var(--accent);}
+footer{background:#0b2221;color:rgba(255,255,255,0.55);text-align:center;padding:1.8rem 8%;font-size:0.85rem;}
 
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
-.fade-in.visible{opacity:1;transform:none;}
+/* One entrance moment: the hero */
+@keyframes rise{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+.hero-grid > *{animation:rise .7s ease both;}
+.hero-grid > *:nth-child(2){animation-delay:.15s;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .hero-grid > *{animation:none;}
+  .btn,.project .link a{transition:none;}
+}
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  .hero,.bio-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem;}
-  .hero-visual{display:none;}
-  .vp-grid{grid-template-columns:1fr;}
-  .artifacts-grid{grid-template-columns:1fr;}
+@media(max-width:960px){
+  .hero-grid,.about-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .domain{grid-template-columns:1fr;gap:0.6rem;}
+  .skill-grid,.project-grid{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  nav ul{gap:1rem;}
+  nav ul a{font-size:0.82rem;}
+  .hero{padding:110px 6% 64px;}
+  section{padding:72px 6%;}
+  .numbers{flex-direction:column;}
+  .num + .num{padding-left:0;border-left:none;border-top:1px solid rgba(255,255,255,0.18);margin-top:1.1rem;}
+  .fact{grid-template-columns:1fr;gap:0.1rem;}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#">KVR<span>.</span></a>
+  <a class="nav-logo" href="#home">KVR<i>.</i></a>
   <ul>
-    <li><a href="#bio">About</a></li>
-    <li><a href="#value">Value</a></li>
-    <li><a href="#artifacts">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#domains">Domains</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-tag">AI / ML Portfolio - Graduate Student</div>
-    <h1>Kiranmai<br><span class="line2">Veramareddy</span></h1>
-    <p class="hero-sub">Exploring the intersection of <strong>Artificial Intelligence</strong> and <strong>Cybersecurity</strong>, building intelligent and secure systems that solve real-world problems.</p>
-    <div class="hero-cta">
-      <a href="#artifacts" class="btn-primary">View Portfolio</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
+<header class="hero" id="home">
+  <div class="hero-grid">
+    <div>
+      <p class="hero-intro">Hi, I'm Kiranmai Veramareddy.</p>
+      <h1>Full stack Java engineer who builds with AI</h1>
+      <p class="hero-sub">I've spent more than six years building full stack Java applications, and the last year adding AI to them: assistants, agents and smarter features that people on real teams actually use. Most of my work has been in media, e-commerce and banking and financial services.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">See my projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      <div class="numbers">
+        <div class="num"><b>6+</b><span>years in full stack Java development</span></div>
+        <div class="num"><b>1</b><span>year building with AI</span></div>
+        <div class="num"><b>3</b><span>domains: media, e-commerce, BFSI</span></div>
+      </div>
+    </div>
+
+    <aside class="stack-card" aria-label="Tech stack">
+      <h2>What I work with</h2>
+      <div class="stack-group">
+        <h3>Backend</h3>
+        <div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Microservices</span><span class="chip">REST APIs</span><span class="chip">Kafka</span><span class="chip">Redis</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>Frontend</h3>
+        <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">HTML &amp; CSS</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>AI</h3>
+        <div class="chips"><span class="chip">GenAI agents</span><span class="chip">Python</span><span class="chip">Prompt engineering</span><span class="chip">NLP</span></div>
+      </div>
+      <div class="stack-group">
+        <h3>Cloud and operations</h3>
+        <div class="chips"><span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Splunk</span><span class="chip">Grafana</span></div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title">A Java developer who got curious about AI</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I started out as a <strong>full stack Java developer</strong>: Spring Boot services on the back end, React and TypeScript on the front, and everything in between that it takes to ship a feature and keep it running. Over <strong>six years</strong> that gave me a solid feel for building systems that stay up when traffic gets busy.</p>
+        <p>About a year ago I began working with <strong>AI</strong> in a serious way. I build GenAI agents in Python, write and test prompts, and connect them to the same Java services and APIs the business already depends on. I like the practical side of it: making an AI feature reliable, observable and safe enough to put in front of customers.</p>
+        <p>My experience sits in <strong>media, e-commerce and BFSI</strong>. Each one taught me something different about scale, speed and trust, and I bring all three to new projects.</p>
+        <p>I'm also a graduate student studying AI and machine learning. The projects further down are what came out of that coursework.</p>
+      </div>
+      <dl class="facts">
+        <div class="fact"><dt>Role</dt><dd>Full stack Java engineer</dd></div>
+        <div class="fact"><dt>Experience</dt><dd>6+ years in Java, 1 year with AI</dd></div>
+        <div class="fact"><dt>Domains</dt><dd>Media, e-commerce, BFSI</dd></div>
+        <div class="fact"><dt>Core stack</dt><dd>Java, Spring Boot, React, TypeScript, Python</dd></div>
+        <div class="fact"><dt>Studying</dt><dd>AI and machine learning (graduate)</dd></div>
+      </dl>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-card">
-      <div class="hero-card-label">Core Competencies</div>
-      <div>
-        <span class="skill-pill accent">Machine Learning</span>
-        <span class="skill-pill accent">Deep Learning</span>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">Data Analysis</span>
-        <span class="skill-pill">CNN</span>
-        <span class="skill-pill accent">Cybersecurity AI</span>
-        <span class="skill-pill">NLP</span>
-        <span class="skill-pill">Problem Solving</span>
-        <span class="skill-pill">Threat Detection</span>
+</section>
+
+<!-- DOMAINS -->
+<section id="domains">
+  <div class="wrap">
+    <h2 class="section-title">Where I've done my work</h2>
+    <p class="section-lead">Three industries, three very different sets of priorities. Knowing the business behind the code helps me make better technical calls.</p>
+    <div class="domain-list">
+      <div class="domain">
+        <h3>Media</h3>
+        <p><b>What it demands</b>Platforms that serve lots of viewers at once and don't fall over during big moments.</p>
+        <p><b>What I bring</b>Scalable Java services, event-driven pipelines with Kafka, and AI for recommendations and content discovery.</p>
       </div>
-      <div class="stat-row">
-        <div class="stat"><div class="stat-num">2+</div><div class="stat-desc">ML Projects</div></div>
-        <div class="stat"><div class="stat-num">5</div><div class="stat-desc">Artifacts</div></div>
-        <div class="stat"><div class="stat-num">AI</div><div class="stat-desc">Focus Area</div></div>
+      <div class="domain">
+        <h3>E-commerce</h3>
+        <p><b>What it demands</b>Fast catalog and search, a checkout that never loses an order, and pages that load quickly.</p>
+        <p><b>What I bring</b>Microservices for cart, catalog and orders, Redis caching, React storefronts, and AI assistants that help shoppers decide.</p>
+      </div>
+      <div class="domain">
+        <h3>BFSI</h3>
+        <p><b>What it demands</b>Accuracy, audit trails and security, because mistakes involve real money.</p>
+        <p><b>What I bring</b>Careful API design, strong monitoring, and AI features built with guardrails and clear human oversight.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BIO -->
-<section id="bio">
-  <div class="bio-grid">
-    <div class="bio-text fade-in">
-      <div class="section-label">Professional Bio</div>
-      <h2 class="section-title">Who I <span>Am</span></h2>
-      <div class="divider"></div>
-      <p>I am <strong>Kiranmai Veramareddy</strong>, a graduate student with a deep passion for Artificial Intelligence and Machine Learning. My journey into AI began during my undergraduate years, where I built a <strong>Medical Chatbot</strong> that demonstrated how AI can bridge technology and human wellbeing.</p>
-      <p>My work on <strong>facial expression recognition using CNNs</strong> deepened my appreciation for how neural networks can interpret the world around us. These projects laid the foundation for my current focus: understanding how AI can be applied to <strong>cybersecurity challenges</strong>.</p>
-      <p>I am a quick learner by nature, someone who thrives in ambiguity, breaks down complex problems methodically, and turns data into actionable insights. I believe that <strong>AI-powered cybersecurity</strong> represents one of the most important frontiers in technology today, and I am committed to developing the skills to lead in this space.</p>
-      <p>This portfolio documents my growth as an AI/ML practitioner, from foundational concepts to real-world applications, as I work toward becoming a <strong>change leader at the intersection of AI and security</strong>.</p>
-    </div>
-    <div class="bio-sidebar fade-in">
-      <h4>At a Glance</h4>
-      <div class="info-row">
-        <div class="ico">🎓</div>
-        <div class="info-content"><label>Status</label><span>Graduate Student</span></div>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills and experience</h2>
+    <p class="section-lead">Six-plus years of full stack Java, with one year of hands-on AI layered on top.</p>
+    <div class="skill-grid">
+      <div class="skill-box">
+        <h3>Java back end</h3>
+        <p class="yrs">6+ years</p>
+        <div class="chips"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Microservices</span><span class="chip">REST APIs</span><span class="chip">Kafka</span><span class="chip">Redis</span></div>
       </div>
-      <div class="info-row">
-        <div class="ico">🎯</div>
-        <div class="info-content"><label>Focus Area</label><span>AI and ML in Cybersecurity</span></div>
+      <div class="skill-box">
+        <h3>Front end</h3>
+        <p class="yrs">6+ years</p>
+        <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">HTML &amp; CSS</span></div>
       </div>
-      <div class="info-row">
-        <div class="ico">💡</div>
-        <div class="info-content"><label>Key Strengths</label><span>Problem-Solving, Data Analysis, Quick Learning</span></div>
+      <div class="skill-box ai">
+        <h3>AI and GenAI</h3>
+        <p class="yrs">1 year</p>
+        <div class="chips"><span class="chip">GenAI agents</span><span class="chip">Python</span><span class="chip">Prompt engineering</span><span class="chip">NLP</span><span class="chip">TensorFlow and Keras</span><span class="chip">Computer vision (CNN)</span></div>
       </div>
-      <div class="info-row">
-        <div class="ico">🚀</div>
-        <div class="info-content"><label>Notable Projects</label><span>Medical Chatbot, CNN Facial Expression Detector</span></div>
-      </div>
-      <div class="info-row">
-        <div class="ico">🌐</div>
-        <div class="info-content"><label>Portfolio Stage</label><span>Early Stage, Actively Building</span></div>
+      <div class="skill-box">
+        <h3>Cloud and operations</h3>
+        <p class="yrs">Day to day</p>
+        <div class="chips"><span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Dynatrace</span><span class="chip">Splunk</span><span class="chip">Grafana</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUE -->
-<section id="value">
-  <div class="fade-in">
-    <div class="section-label">Personal Value Proposition</div>
-    <h2 class="section-title">The Value I <span>Bring</span></h2>
-    <div class="divider"></div>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <h2 class="section-title">AI projects from my coursework</h2>
+    <p class="section-lead">Each one shows how I go from an idea to something working, and what I learned along the way.</p>
+
+    <div class="project-grid">
+
+      <article class="project">
+        <span class="project-tag">NLP and chatbot</span>
+        <h3>Medical Chatbot: AI-powered health assistant</h3>
+        <dl>
+          <div class="row"><dt>Goal</dt><dd>Build a conversational assistant that gives people clear, accessible health guidance using NLP.</dd></div>
+          <div class="row"><dt>How I built it</dt><dd>Designed intent recognition, curated a medical FAQ dataset, trained a sequence-to-sequence dialogue model, and improved it through user testing and accuracy checks.</dd></div>
+          <div class="row"><dt>Tools</dt><dd>Python, NLTK, TensorFlow / Keras, Flask, JSON intent dataset</dd></div>
+          <div class="row"><dt>Why it matters</dt><dd>It covers the full path from data prep to a deployed app, the same path I follow when adding an assistant to a business application.</dd></div>
+        </dl>
+      </article>
+
+      <article class="project">
+        <span class="project-tag">Computer vision</span>
+        <h3>Facial expression recognition using CNNs</h3>
+        <dl>
+          <div class="row"><dt>Goal</dt><dd>Train a deep learning model that classifies facial expressions in real time.</dd></div>
+          <div class="row"><dt>How I built it</dt><dd>Preprocessed labeled images, designed a multi-layer CNN, used data augmentation, and judged results with confusion matrices and accuracy and loss curves.</dd></div>
+          <div class="row"><dt>Tools</dt><dd>Python, TensorFlow, Keras, OpenCV, NumPy, Matplotlib</dd></div>
+          <div class="row"><dt>Why it matters</dt><dd>It gave me hands-on practice designing, training and honestly evaluating a model, which applies to identity checks and fraud-style use cases in BFSI.</dd></div>
+        </dl>
+      </article>
+
+      <article class="project">
+        <span class="project-tag">Generative AI</span>
+        <h3>MindCheck: AI-powered mental health check-in assistant</h3>
+        <dl>
+          <div class="row"><dt>Goal</dt><dd>Give college students a low-pressure, judgment-free way to check in on how they feel and get practical coping tips.</dd></div>
+          <div class="row"><dt>How I built it</dt><dd>Followed the Design Thinking process: researched student pain points, set clear ethical limits, designed the conversations, prototyped with a structured system prompt, and tested five scenarios including a crisis referral.</dd></div>
+          <div class="row"><dt>Tools</dt><dd>Chatbase.co, prompt engineering, Claude AI, Design Thinking</dd></div>
+          <div class="row"><dt>Why it matters</dt><dd>It shows I can build an AI assistant for a sensitive audience and set sensible boundaries around it.</dd></div>
+        </dl>
+          <div class="link"><a href="https://www.chatbase.co/chatbot-iframe/Jna20hy5wKN80Cetn6Xdd" target="_blank" rel="noopener">Try the chatbot</a></div>
+      </article>
+
+      <article class="project">
+        <span class="project-tag">Agentic AI and research</span>
+        <h3>The Lobster Report: how OpenClaw set off a Big Tech arms race</h3>
+        <dl>
+          <div class="row"><dt>Goal</dt><dd>Explain the rise of OpenClaw as an agentic AI platform and how Tencent, Alibaba, ByteDance, Baidu and Nvidia each responded.</dd></div>
+          <div class="row"><dt>How I built it</dt><dd>Pulled together reporting from Fortune, CNBC, Reuters and 36Kr, mapped each company's timeline and strategy, and wrote it up as a newsletter with charts, risk analysis and a deployment forecast.</dd></div>
+          <div class="row"><dt>Tools</dt><dd>Industry research, AI trend analysis, newsletter design</dd></div>
+          <div class="row"><dt>Why it matters</dt><dd>It shows I can turn fast-moving AI news into something business teams can act on, including the security risks of agents that act on their own.</dd></div>
+        </dl>
+          <div class="link"><a href="https://claude.ai/public/artifacts/a0145993-2b9d-49d2-847d-bcac0f82e0df" target="_blank" rel="noopener">Read the newsletter</a></div>
+      </article>
+
+      <article class="project">
+        <span class="project-tag">AI history</span>
+        <h3>AI timeline 1956 to 2024: failures, controversies and breakthroughs</h3>
+        <dl>
+          <div class="row"><dt>Goal</dt><dd>Tell the story of AI from the 1956 Dartmouth Conference to the 2024 Nobel Prize, including the failures that are usually left out.</dd></div>
+          <div class="row"><dt>How I built it</dt><dd>Researched nearly seven decades of milestones, picked the events that show both progress and controversy, and coded the whole timeline as a standalone HTML page.</dd></div>
+          <div class="row"><dt>Tools</dt><dd>HTML, CSS, historical research, GitHub Pages</dd></div>
+          <div class="row"><dt>Why it matters</dt><dd>Knowing where AI went wrong makes me more careful about how I build and ship it today.</dd></div>
+        </dl>
+          <div class="link"><a href="https://claude.ai/public/artifacts/f88e050f-30ab-4e43-bfa1-bce5abdc149c" target="_blank" rel="noopener">View the timeline</a></div>
+      </article>
+
+      <article class="project">
+        <span class="project-tag">Leadership and AI governance</span>
+        <h3>My framework for AI leadership and change management</h3>
+        <dl>
+          <div class="row"><dt>Goal</dt><dd>Define my values, mission, goals and action plan as a practitioner who wants to lead responsible AI work.</dd></div>
+          <div class="row"><dt>How I built it</dt><dd>Assessed the gap between my technical confidence and leadership readiness, then organized it into seven areas, from core values to phased plans and accountability. Published as a website.</dd></div>
+          <div class="row"><dt>Tools</dt><dd>Reflective writing, leadership frameworks, HTML and CSS, GitHub Pages</dd></div>
+          <div class="row"><dt>Why it matters</dt><dd>Good AI work needs people who can explain risk clearly and set up governance, not only people who can write code.</dd></div>
+        </dl>
+          <div class="link"><a href="https://claude.ai/public/artifacts/4265027d-d014-46ac-8fa2-66e240ceb6c9" target="_blank" rel="noopener">View the framework</a></div>
+      </article>
+
+    </div>
+
+    <p class="more-note">I also keep a <a href="https://kiranmaiveramareddy.github.io/ml-portfolio/" target="_blank" rel="noopener">weekly machine learning portfolio</a> and add something new to it every week.</p>
   </div>
-  <div class="vp-grid fade-in">
-    <div class="vp-card">
-      <div class="vp-icon">⚡</div>
-      <h3>Rapid Skill Acquisition</h3>
-      <p>I learn fast and apply faster. From NLP chatbots to computer vision models, I pick up new tools and frameworks quickly, a critical asset in the fast-moving AI landscape.</p>
-    </div>
-    <div class="vp-card">
-      <div class="vp-icon">🔍</div>
-      <h3>Analytical Problem-Solver</h3>
-      <p>I approach challenges systematically, breaking down complex problems, finding patterns in data, and designing solutions that are both intelligent and practical.</p>
-    </div>
-    <div class="vp-card">
-      <div class="vp-icon">🔐</div>
-      <h3>Security-Minded AI Thinker</h3>
-      <p>I see AI not just as a tool for automation but as a force multiplier for cybersecurity, from anomaly detection to threat intelligence, and I am building expertise at this intersection.</p>
-    </div>
-  </div>
-  <div class="vp-statement fade-in">
-    <p>I am a <strong>graduate-level AI/ML practitioner</strong> who combines a foundation in deep learning and natural language processing with a growing focus on <strong>cybersecurity applications</strong>. I bring the ability to translate complex technical concepts into working solutions, paired with an analytical mindset and a commitment to continuous learning. My value lies in <strong>bridging the gap between AI research and real-world security challenges</strong>, making intelligent systems not just smarter, but safer.</p>
-  </div>
-</section>
-
-<!-- ARTIFACTS -->
-<section id="artifacts">
-  <div class="fade-in">
-    <div class="section-label">Course Portfolio</div>
-    <h2 class="section-title">My <span>Artifacts</span></h2>
-    <div class="divider"></div>
-    <p style="color:var(--muted);font-weight:300;max-width:600px;">Each artifact below documents a key learning milestone, showcasing the process, tools, and value behind the work.</p>
-    <p style="color:var(--muted);font-weight:300;max-width:600px;margin-top:0.9rem;">I also publish a separate <a href="https://kiranmaiveramareddy.github.io/ml-portfolio/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(14,165,233,0.4);">weekly machine learning portfolio</a>, with a new artifact added each week.</p>
-  </div>
-
-  <div class="artifacts-grid">
-
-    <!-- ARTIFACT 1a -->
-    <div class="artifact-card fade-in">
-      <div class="artifact-header">
-        <span class="artifact-num">Artifact 01 A</span>
-        <span class="artifact-tag">NLP - Chatbot</span>
-      </div>
-      <div class="artifact-body">
-        <h3>Medical Chatbot: AI-Powered Health Assistant</h3>
-        <div class="meta-row">
-          <span class="meta-label">Objective</span>
-          <span class="meta-value">To develop a conversational AI system that provides reliable, accessible medical guidance by leveraging NLP techniques.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Process</span>
-          <span class="meta-value">Designed intent recognition pipelines, curated a medical FAQ dataset, built and trained a sequence-to-sequence dialogue model, and iterated based on user testing and accuracy metrics.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Tools</span>
-          <span class="meta-value">Python, NLTK, TensorFlow / Keras, Flask, JSON intent dataset</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Value Prop</span>
-          <span class="meta-value">Demonstrates ability to design end-to-end AI solutions, from data preprocessing to deployment, while addressing a meaningful real-world problem in healthcare.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Unique Value</span>
-          <span class="meta-value">Combines NLP knowledge with domain-specific application, showing adaptability across fields, a skill directly transferable to security chatbot and threat-analysis tools.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Relevance</span>
-          <span class="meta-value">NLP and conversational AI are foundational to modern threat intelligence platforms, automated incident response, and SOC tools.</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ARTIFACT 1b -->
-    <div class="artifact-card fade-in">
-      <div class="artifact-header">
-        <span class="artifact-num">Artifact 01 B</span>
-        <span class="artifact-tag">Computer Vision - CNN</span>
-      </div>
-      <div class="artifact-body">
-        <h3>Facial Expression Recognition Using CNNs</h3>
-        <div class="meta-row">
-          <span class="meta-label">Objective</span>
-          <span class="meta-value">To build a deep learning model capable of classifying human facial expressions in real-time using Convolutional Neural Networks.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Process</span>
-          <span class="meta-value">Collected and preprocessed labeled image datasets, designed a multi-layer CNN architecture, trained with data augmentation techniques, and evaluated performance using confusion matrices and accuracy/loss curves.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Tools</span>
-          <span class="meta-value">Python, TensorFlow, Keras, OpenCV, NumPy, Matplotlib</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Value Prop</span>
-          <span class="meta-value">Illustrates hands-on expertise in designing, training, and evaluating deep learning models, a core competency for any AI/ML practitioner working with real-world data.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Unique Value</span>
-          <span class="meta-value">Computer vision skills are directly applicable to biometric security, surveillance anomaly detection, and identity verification systems in cybersecurity.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Relevance</span>
-          <span class="meta-value">CNNs underpin modern AI-driven security systems including facial recognition for access control and video-based threat detection in real-time environments.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="artifact-card fade-in">
-      <div class="artifact-header">
-        <span class="artifact-num">Artifact 02</span>
-        <span class="artifact-tag">Generative AI - Chatbot</span>
-      </div>
-      <div class="artifact-body">
-        <h3>MindCheck: AI-Powered Mental Health Check-In Assistant</h3>
-        <div class="meta-row">
-          <span class="meta-label">Artifact</span>
-          <span class="meta-value">
-            <a href="https://www.chatbase.co/chatbot-iframe/Jna20hy5wKN80Cetn6Xdd" target="_blank" style="display:inline-block;margin-top:4px;padding:7px 18px;background:var(--accent);color:#fff;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-              View Chatbot
-            </a>
-          </span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Objective</span>
-          <span class="meta-value">To design and deploy a motivational AI chatbot that provides college students with a low-barrier, judgment-free space to check in on their emotional wellbeing and receive evidence-based coping strategies in real time.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Process</span>
-          <span class="meta-value">Applied the Design Thinking framework across five phases: conducted user empathy research to identify pain points among college students, defined the problem scope and ethical boundaries, ideated conversation flows and coping strategy content, prototyped the bot using a structured system prompt, and iteratively tested across five behavioral scenarios including a crisis referral protocol.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Tools</span>
-          <span class="meta-value">Chatbase.co, Prompt Engineering, Claude AI, Design Thinking Framework</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Value Prop</span>
-          <span class="meta-value">Demonstrates practical fluency in prompt engineering, responsible AI design, and human-centered product thinking — the intersection of technical and ethical competencies that defines effective AI/ML practitioners in real-world deployment contexts.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Unique Value</span>
-          <span class="meta-value">Bridges AI capability with social impact by addressing a documented mental health access gap in higher education, showcasing the ability to scope, build, and constrain AI systems for sensitive, user-facing applications.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Relevance</span>
-          <span class="meta-value">Conversational AI and LLM-powered assistants are among the fastest-growing deployment areas across healthcare, education, and enterprise software — this artifact reflects direct hands-on experience building within that paradigm responsibly.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="artifact-card fade-in">
-      <div class="artifact-header">
-        <span class="artifact-num">Artifact 03</span>
-        <span class="artifact-tag">Agentic AI - Business Intelligence</span>
-      </div>
-      <div class="artifact-body">
-        <h3>The Lobster Report: How OpenClaw Triggered a Big Tech Arms Race</h3>
-        <div class="meta-row">
-          <span class="meta-label">Artifact</span>
-          <span class="meta-value">
-            <a href="https://claude.ai/public/artifacts/a0145993-2b9d-49d2-847d-bcac0f82e0df" target="_blank" style="display:inline-block;margin-top:4px;padding:7px 18px;background:var(--accent);color:#fff;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-              View Newsletter
-            </a>
-          </span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Objective</span>
-          <span class="meta-value">To research, analyze, and communicate the rise of OpenClaw as an agentic AI platform and examine how five major technology companies (Tencent, Alibaba, ByteDance, Baidu, and Nvidia) strategically responded, providing business decision-makers with actionable intelligence on the agentic AI shift.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Process</span>
-          <span class="meta-value">Gathered and synthesized primary reporting from Fortune, CNBC, Reuters, and 36Kr; mapped each company's response timeline, product strategy, and competitive logic; structured findings into a professional newsletter format with data visualizations, company deep dives, a commercial impact analysis, a risk assessment, and a forward-looking deployment forecast.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Tools</span>
-          <span class="meta-value">Industry research sources (Fortune, CNBC, Reuters, 36Kr), AI trend analysis, newsletter design, business intelligence frameworks</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Value Prop</span>
-          <span class="meta-value">Demonstrates the ability to translate fast-moving AI developments into structured, audience-ready intelligence, a critical skill for AI/ML practitioners who must communicate complex technical shifts to business stakeholders, leadership teams, and cross-functional collaborators.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Unique Value</span>
-          <span class="meta-value">Goes beyond surface-level trend reporting by analyzing the strategic logic behind each company's approach, covering governance risks including 512 documented security vulnerabilities and prompt injection attacks, and contextualizing agentic AI as infrastructure rather than just a product category.</span>
-        </div>
-        <div class="meta-row">
-          <span class="meta-label">Relevance</span>
-          <span class="meta-value">Agentic AI systems that act autonomously represent the next frontier for both productivity and security risk. Understanding how these platforms scale, where their vulnerabilities lie, and how enterprises are adopting them is directly relevant to building AI-powered cybersecurity strategies and threat response systems.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="artifact-card fade-in">
-  <div class="artifact-header">
-    <span class="artifact-num">Artifact 04</span>
-    <span class="artifact-tag">AI History - Interactive Timeline</span>
-  </div>
-  <div class="artifact-body">
-    <h3>AI Timeline (1956 - 2024): Failures, Controversies and Breakthroughs</h3>
-    <div class="meta-row">
-      <span class="meta-label">Artifact</span>
-      <span class="meta-value">
-        <a href="https://claude.ai/public/artifacts/f88e050f-30ab-4e43-bfa1-bce5abdc149c" target="_blank" style="display:inline-block;margin-top:4px;padding:7px 18px;background:var(--accent);color:#fff;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          View Timeline
-        </a>
-      </span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Objective</span>
-      <span class="meta-value">To document the complete arc of artificial intelligence from its formal origin at the 1956 Dartmouth Conference through to the 2024 Nobel Prize, with an honest emphasis on the failures and controversies that mainstream AI narratives tend to overlook.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Process</span>
-      <span class="meta-value">Researched key milestones across nearly seven decades of AI history, curated events that represented not just technical progress but also ethical controversies and high-profile failures, then structured and coded the entire timeline as a standalone HTML file with clean visual formatting for easy navigation.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Tools</span>
-      <span class="meta-value">HTML, CSS, historical research across academic and industry sources, GitHub Pages for deployment</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Value Prop</span>
-      <span class="meta-value">Demonstrates the ability to synthesize decades of complex technical history into a clear, accessible, and web-ready format, showing both research depth and practical front-end implementation skills that are directly applicable to knowledge communication in AI/ML roles.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Unique Value</span>
-      <span class="meta-value">Rather than only celebrating AI milestones, this timeline deliberately surfaces the failures and controversies that shaped the field, offering a more complete and critical perspective on how AI has evolved, which is essential context for anyone building responsible AI systems.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Relevance</span>
-      <span class="meta-value">Understanding AI's history of failures and ethical controversies is foundational to building safer systems today, particularly in high-stakes fields like cybersecurity where past mistakes in autonomous decision-making carry direct lessons for modern threat detection and AI governance.</span>
-    </div>
-  </div>
-</div>
-
-    <div class="artifact-card fade-in">
-  <div class="artifact-header">
-    <span class="artifact-num">Artifact 05</span>
-    <span class="artifact-tag">Leadership - AI Governance</span>
-  </div>
-  <div class="artifact-body">
-    <h3>Personal Framework for AI/ML Leadership and Change Management</h3>
-    <div class="meta-row">
-      <span class="meta-label">Artifact</span>
-      <span class="meta-value">
-        <a href="https://claude.ai/public/artifacts/4265027d-d014-46ac-8fa2-66e240ceb6c9" target="_blank" style="display:inline-block;margin-top:4px;padding:7px 18px;background:var(--accent);color:#fff;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          View Timeline
-        </a>
-      </span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Objective</span>
-      <span class="meta-value">To develop a personal leadership framework that defines my values, mission, objectives, and action plans as an emerging AI/ML practitioner, with a focus on responsible AI governance and ethical deployment practices.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Process</span>
-      <span class="meta-value">Conducted a reflective self-assessment to identify gaps between technical confidence and leadership readiness, then structured findings across seven areas including mission, core values, time-bound objectives, phased action plans, and accountability mechanisms. Published as an interactive timeline website.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Tools</span>
-      <span class="meta-value">Reflective writing, AI/ML leadership frameworks, HTML and CSS for web presentation, GitHub Pages for deployment</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Value Prop</span>
-      <span class="meta-value">Demonstrates the ability to think critically about not just what AI systems do, but what kind of practitioner is needed to build them responsibly, connecting technical skill to ethical accountability and long-term professional growth.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Unique Value</span>
-      <span class="meta-value">Goes beyond technical portfolio artifacts by addressing the human and governance dimensions of AI leadership, showing a commitment to building systems that protect human dignity and can withstand ethical scrutiny.</span>
-    </div>
-    <div class="meta-row">
-      <span class="meta-label">Relevance</span>
-      <span class="meta-value">As AI is increasingly deployed in high-stakes environments like cybersecurity, the ability to lead responsibly, communicate risk clearly, and build governance structures around AI systems is just as important as the technical skills to build them.</span>
-    </div>
-  </div>
-  </div>
-
-</div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-grid">
-    <div class="contact-text fade-in">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Let's <span>Connect</span></h2>
-      <div class="divider"></div>
-      <p>Whether you are a collaborator, recruiter, or fellow AI enthusiast, I would love to connect and discuss ideas at the intersection of artificial intelligence and cybersecurity.</p>
-      <div class="contact-links">
-        <!-- GitHub Link 
-        <a href="https://github.com/kiranmaiveramareddy" target="_blank" class="contact-link">
-          <div class="lico">🐙</div>
-          <div class="ltext">
-            <label>GitHub</label>
-            <span>github.com/kiranmaiveramareddy</span>
-          </div>
-        </a> -->
-
-        <!-- Email Link -->
-        <a href="mailto:kiranmai.veramareddy@myemail.indwes.edu" class="contact-link">
-          <div class="lico">✉️</div>
-          <div class="ltext">
-            <label>Email</label>
-            <span>kiranmai.veramareddy@myemail.indwes.edu</span>
-          </div>
-        </a>
-      </div>
-    </div>
+  <div class="wrap">
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-lead">If you're hiring, building something with Java and AI, or just want to compare notes, send me a message. I'm happy to talk about media, e-commerce or financial services projects.</p>
+    <a href="mailto:kiranmai.veramareddy@myemail.indwes.edu" class="contact-link">
+      <div><small>Email</small><span>kiranmai.veramareddy@myemail.indwes.edu</span></div>
+    </a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 <span>Kiranmai Veramareddy</span> · AI/ML Portfolio · Built for academic and professional growth</p>
+  <p>&copy; 2026 Kiranmai Veramareddy. Full stack Java and AI.</p>
 </footer>
 
-<script>
-(function() {
-  var items = document.querySelectorAll('.fade-in');
-  if (!items.length) return;
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  items.forEach(function(el) { observer.observe(el); });
-  setTimeout(function() {
-    items.forEach(function(el) { el.classList.add('visible'); });
-  }, 800);
-})();
-</script>
 </body>
 </html>
