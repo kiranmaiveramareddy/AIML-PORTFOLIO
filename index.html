@@ -116,6 +116,32 @@ section{padding:96px 8%;}
 .more-note{margin-top:2rem;color:var(--muted);font-weight:300;max-width:62ch;}
 .more-note a{color:var(--teal);font-weight:600;}
 
+
+/* FRAMEWORK */
+.feature{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:2rem 2.2rem;margin-top:2.5rem;}
+.feature .project-tag{margin-bottom:0.9rem;}
+.feature h3{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1.2rem;max-width:30ch;}
+.feature dl{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem;}
+.feature .row dd{max-width:60ch;}
+.fw-title{font-family:var(--display);font-size:1.35rem;font-weight:700;margin:3rem 0 0.4rem;}
+.fw-note{color:var(--muted);font-weight:300;max-width:70ch;font-size:0.97rem;}
+.legend{display:flex;flex-wrap:wrap;gap:0.5rem 1.2rem;margin:1.2rem 0;font-size:0.85rem;color:var(--muted);}
+.legend span{display:inline-flex;align-items:center;gap:0.45rem;}
+.tbl-wrap{overflow-x:auto;background:var(--white);border:1px solid var(--line);border-radius:12px;}
+table{width:100%;border-collapse:collapse;min-width:860px;font-size:0.92rem;}
+th{text-align:left;font-size:0.85rem;font-weight:600;color:var(--muted);padding:0.9rem 1.1rem;border-bottom:2px solid var(--ink);background:var(--white);}
+td{padding:0.95rem 1.1rem;vertical-align:top;border-bottom:1px solid var(--soft);color:var(--ink);font-weight:300;}
+td:first-child{font-weight:600;font-family:var(--display);font-size:1rem;white-space:nowrap;}
+tr.group td{background:var(--soft);font-family:var(--display);font-weight:700;font-size:0.95rem;padding:0.7rem 1.1rem;white-space:normal;}
+tr.group td small{font-family:var(--body);font-weight:300;color:var(--muted);font-size:0.85rem;margin-left:0.6rem;}
+tr:last-child td{border-bottom:none;}
+.dom{display:inline-block;margin:0 4px 4px 0;padding:2px 10px;border-radius:6px;font-size:0.8rem;font-weight:600;white-space:nowrap;}
+.d-tab{background:#d8efe9;color:#0b5a53;}
+.d-cv{background:#fde9c4;color:#7a4a00;}
+.d-nlp{background:#dbe6fb;color:#27408b;}
+.d-gen{background:#f6dcec;color:#8a2a63;}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block;}
+
 /* CONTACT */
 #contact{background:var(--deep);color:var(--white);}
 #contact .section-title{color:var(--white);}
@@ -142,6 +168,7 @@ footer{background:#0b2221;color:rgba(255,255,255,0.55);text-align:center;padding
   .hero-grid,.about-grid{grid-template-columns:1fr;gap:2.5rem;}
   .domain{grid-template-columns:1fr;gap:0.6rem;}
   .skill-grid,.project-grid{grid-template-columns:1fr;}
+  .feature dl{grid-template-columns:1fr;}
 }
 @media(max-width:640px){
   nav ul{gap:1rem;}
@@ -216,7 +243,7 @@ footer{background:#0b2221;color:rgba(255,255,255,0.55);text-align:center;padding
         <p>I started out as a <strong>full stack Java developer</strong>: Spring Boot services on the back end, React and TypeScript on the front, and everything in between that it takes to ship a feature and keep it running. Over <strong>six years</strong> that gave me a solid feel for building systems that stay up when traffic gets busy.</p>
         <p>About a year ago I began working with <strong>AI</strong> in a serious way. I build GenAI agents in Python, write and test prompts, and connect them to the same Java services and APIs the business already depends on. I like the practical side of it: making an AI feature reliable, observable and safe enough to put in front of customers.</p>
         <p>My experience sits in <strong>media, e-commerce and BFSI</strong>. Each one taught me something different about scale, speed and trust, and I bring all three to new projects.</p>
-        <p>I'm also a graduate student studying AI and machine learning. The projects further down are what came out of that coursework.</p>
+        <p>I'm also a graduate student studying AI and machine learning. The project further down comes out of that coursework.</p>
       </div>
       <dl class="facts">
         <div class="fact"><dt>Role</dt><dd>Full stack Java engineer</dd></div>
@@ -288,83 +315,50 @@ footer{background:#0b2221;color:rgba(255,255,255,0.55);text-align:center;padding
 <section id="projects">
   <div class="wrap">
     <h2 class="section-title">AI projects from my coursework</h2>
-    <p class="section-lead">Each one shows how I go from an idea to something working, and what I learned along the way.</p>
+    <p class="section-lead">My current coursework piece: a side-by-side look at the algorithms behind modern AI, and what each one is good for.</p>
 
-    <div class="project-grid">
+    <article class="feature">
+      <span class="project-tag">Machine learning portfolio artifact</span>
+      <h3>Machine learning algorithms: a visual framework</h3>
+      <dl>
+        <div class="row"><dt>Goal</dt><dd>Show how the main machine learning algorithms differ by learning style and by where they are used: tabular data, computer vision, NLP and generative AI. I also wanted real examples so each one is easy to picture.</dd></div>
+        <div class="row"><dt>How I built it</dt><dd>I picked 11 algorithms, sorted them by how they learn, and tagged each with its application domains, a real-world use case and a plain-language explanation of how it works. I then laid them out as one comparison chart.</dd></div>
+        <div class="row"><dt>Tools</dt><dd>Course readings on AI, ML, deep learning and GenAI, HTML and CSS for the chart</dd></div>
+        <div class="row"><dt>Why it matters</dt><dd>Choosing the right algorithm is half the job. The tabular models here fit the fraud, churn and risk problems I see in BFSI and e-commerce, while the language and generative models cover assistants and content tools in media.</dd></div>
+      </dl>
+    </article>
 
-      <article class="project">
-        <span class="project-tag">NLP and chatbot</span>
-        <h3>Medical Chatbot: AI-powered health assistant</h3>
-        <dl>
-          <div class="row"><dt>Goal</dt><dd>Build a conversational assistant that gives people clear, accessible health guidance using NLP.</dd></div>
-          <div class="row"><dt>How I built it</dt><dd>Designed intent recognition, curated a medical FAQ dataset, trained a sequence-to-sequence dialogue model, and improved it through user testing and accuracy checks.</dd></div>
-          <div class="row"><dt>Tools</dt><dd>Python, NLTK, TensorFlow / Keras, Flask, JSON intent dataset</dd></div>
-          <div class="row"><dt>Why it matters</dt><dd>It covers the full path from data prep to a deployed app, the same path I follow when adding an assistant to a business application.</dd></div>
-        </dl>
-      </article>
-
-      <article class="project">
-        <span class="project-tag">Computer vision</span>
-        <h3>Facial expression recognition using CNNs</h3>
-        <dl>
-          <div class="row"><dt>Goal</dt><dd>Train a deep learning model that classifies facial expressions in real time.</dd></div>
-          <div class="row"><dt>How I built it</dt><dd>Preprocessed labeled images, designed a multi-layer CNN, used data augmentation, and judged results with confusion matrices and accuracy and loss curves.</dd></div>
-          <div class="row"><dt>Tools</dt><dd>Python, TensorFlow, Keras, OpenCV, NumPy, Matplotlib</dd></div>
-          <div class="row"><dt>Why it matters</dt><dd>It gave me hands-on practice designing, training and honestly evaluating a model, which applies to identity checks and fraud-style use cases in BFSI.</dd></div>
-        </dl>
-      </article>
-
-      <article class="project">
-        <span class="project-tag">Generative AI</span>
-        <h3>MindCheck: AI-powered mental health check-in assistant</h3>
-        <dl>
-          <div class="row"><dt>Goal</dt><dd>Give college students a low-pressure, judgment-free way to check in on how they feel and get practical coping tips.</dd></div>
-          <div class="row"><dt>How I built it</dt><dd>Followed the Design Thinking process: researched student pain points, set clear ethical limits, designed the conversations, prototyped with a structured system prompt, and tested five scenarios including a crisis referral.</dd></div>
-          <div class="row"><dt>Tools</dt><dd>Chatbase.co, prompt engineering, Claude AI, Design Thinking</dd></div>
-          <div class="row"><dt>Why it matters</dt><dd>It shows I can build an AI assistant for a sensitive audience and set sensible boundaries around it.</dd></div>
-        </dl>
-          <div class="link"><a href="https://www.chatbase.co/chatbot-iframe/Jna20hy5wKN80Cetn6Xdd" target="_blank" rel="noopener">Try the chatbot</a></div>
-      </article>
-
-      <article class="project">
-        <span class="project-tag">Agentic AI and research</span>
-        <h3>The Lobster Report: how OpenClaw set off a Big Tech arms race</h3>
-        <dl>
-          <div class="row"><dt>Goal</dt><dd>Explain the rise of OpenClaw as an agentic AI platform and how Tencent, Alibaba, ByteDance, Baidu and Nvidia each responded.</dd></div>
-          <div class="row"><dt>How I built it</dt><dd>Pulled together reporting from Fortune, CNBC, Reuters and 36Kr, mapped each company's timeline and strategy, and wrote it up as a newsletter with charts, risk analysis and a deployment forecast.</dd></div>
-          <div class="row"><dt>Tools</dt><dd>Industry research, AI trend analysis, newsletter design</dd></div>
-          <div class="row"><dt>Why it matters</dt><dd>It shows I can turn fast-moving AI news into something business teams can act on, including the security risks of agents that act on their own.</dd></div>
-        </dl>
-          <div class="link"><a href="https://claude.ai/public/artifacts/a0145993-2b9d-49d2-847d-bcac0f82e0df" target="_blank" rel="noopener">Read the newsletter</a></div>
-      </article>
-
-      <article class="project">
-        <span class="project-tag">AI history</span>
-        <h3>AI timeline 1956 to 2024: failures, controversies and breakthroughs</h3>
-        <dl>
-          <div class="row"><dt>Goal</dt><dd>Tell the story of AI from the 1956 Dartmouth Conference to the 2024 Nobel Prize, including the failures that are usually left out.</dd></div>
-          <div class="row"><dt>How I built it</dt><dd>Researched nearly seven decades of milestones, picked the events that show both progress and controversy, and coded the whole timeline as a standalone HTML page.</dd></div>
-          <div class="row"><dt>Tools</dt><dd>HTML, CSS, historical research, GitHub Pages</dd></div>
-          <div class="row"><dt>Why it matters</dt><dd>Knowing where AI went wrong makes me more careful about how I build and ship it today.</dd></div>
-        </dl>
-          <div class="link"><a href="https://claude.ai/public/artifacts/f88e050f-30ab-4e43-bfa1-bce5abdc149c" target="_blank" rel="noopener">View the timeline</a></div>
-      </article>
-
-      <article class="project">
-        <span class="project-tag">Leadership and AI governance</span>
-        <h3>My framework for AI leadership and change management</h3>
-        <dl>
-          <div class="row"><dt>Goal</dt><dd>Define my values, mission, goals and action plan as a practitioner who wants to lead responsible AI work.</dd></div>
-          <div class="row"><dt>How I built it</dt><dd>Assessed the gap between my technical confidence and leadership readiness, then organized it into seven areas, from core values to phased plans and accountability. Published as a website.</dd></div>
-          <div class="row"><dt>Tools</dt><dd>Reflective writing, leadership frameworks, HTML and CSS, GitHub Pages</dd></div>
-          <div class="row"><dt>Why it matters</dt><dd>Good AI work needs people who can explain risk clearly and set up governance, not only people who can write code.</dd></div>
-        </dl>
-          <div class="link"><a href="https://claude.ai/public/artifacts/4265027d-d014-46ac-8fa2-66e240ceb6c9" target="_blank" rel="noopener">View the framework</a></div>
-      </article>
-
+    <h3 class="fw-title">The framework</h3>
+    <p class="fw-note">Algorithms are grouped by how they learn, then tagged by the kind of data they work best with. Read across a row to see what an algorithm does, and down a column to see which ones compete for the same job.</p>
+    <div class="legend" aria-label="Domain colors">
+      <span><i class="dot" style="background:#7cc5b8"></i>Tabular data</span>
+      <span><i class="dot" style="background:#f2c46d"></i>Computer vision</span>
+      <span><i class="dot" style="background:#8ea8e6"></i>NLP</span>
+      <span><i class="dot" style="background:#e08bbd"></i>Generative AI</span>
     </div>
+    <div class="tbl-wrap" tabindex="0" role="region" aria-label="Algorithm comparison table, scrolls sideways on small screens">
+      <table>
+        <thead><tr><th scope="col">Algorithm</th><th scope="col">Domains</th><th scope="col">Example use cases</th><th scope="col">How it works</th></tr></thead>
+        <tbody>
+<tr class="group"><td colspan="4">Supervised learning<small>Learns from labeled examples</small></td></tr>
+<tr><td>Linear regression</td><td><span class="dom d-tab">Tabular</span></td><td>Forecasting sales, estimating home prices</td><td>Fits the straight line that keeps the gap between predictions and real values as small as possible.</td></tr>
+<tr><td>Decision tree</td><td><span class="dom d-tab">Tabular</span></td><td>Approving or declining a loan application</td><td>Asks a series of yes-or-no questions about the data and follows the answers down to a decision.</td></tr>
+<tr><td>Random forest</td><td><span class="dom d-tab">Tabular</span></td><td>Spotting fraudulent transactions, predicting customer churn</td><td>Builds many decision trees on different slices of the data and lets them vote, which cancels out single-tree mistakes.</td></tr>
+<tr><td>Gradient boosting</td><td><span class="dom d-tab">Tabular</span></td><td>Credit risk scoring, ranking search results</td><td>Adds small trees one at a time, each one fixing the errors the previous trees left behind.</td></tr>
+<tr><td>Support vector machine</td><td><span class="dom d-tab">Tabular</span><span class="dom d-nlp">NLP</span></td><td>Spam filtering, text classification</td><td>Finds the boundary that separates two classes with the widest possible safety margin.</td></tr>
+<tr><td>Convolutional neural network (CNN)</td><td><span class="dom d-cv">Computer vision</span></td><td>Image classification, defect detection, face recognition</td><td>Slides small filters across an image to pick up edges and shapes, then stacks them into higher-level features.</td></tr>
+<tr class="group"><td colspan="4">Unsupervised learning<small>Finds structure in unlabeled data</small></td></tr>
+<tr><td>K-means clustering</td><td><span class="dom d-tab">Tabular</span></td><td>Grouping customers into segments</td><td>Places a set number of centers in the data and assigns every point to its nearest one, adjusting until the groups settle.</td></tr>
+<tr><td>Principal component analysis (PCA)</td><td><span class="dom d-tab">Tabular</span><span class="dom d-cv">Computer vision</span></td><td>Shrinking large datasets, compressing images, visualizing patterns</td><td>Re-expresses the data along the few directions that capture the most variation, so you keep the signal and drop the clutter.</td></tr>
+<tr><td>Generative adversarial network (GAN)</td><td><span class="dom d-gen">Generative AI</span><span class="dom d-cv">Computer vision</span></td><td>Creating realistic synthetic images and data</td><td>Two networks compete: one generates fakes, the other tries to catch them, and both improve until the fakes look real.</td></tr>
+<tr><td>Diffusion model</td><td><span class="dom d-gen">Generative AI</span><span class="dom d-cv">Computer vision</span></td><td>Image generation such as Stable Diffusion</td><td>Learns to remove noise a little at a time, so it can start from pure noise and end up with a new image.</td></tr>
+<tr class="group"><td colspan="4">Self-supervised learning<small>Learns from unlabeled data by predicting parts of it</small></td></tr>
+<tr><td>Transformer (BERT, GPT)</td><td><span class="dom d-nlp">NLP</span><span class="dom d-gen">Generative AI</span></td><td>Chat assistants, sentiment analysis, summarizing and writing text</td><td>Uses attention to weigh how every word relates to every other word, then learns by predicting missing or next words.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fw-note" style="margin-top:1rem;">A note on classification: models like GPT learn from unlabeled text, so they are not supervised in the strict sense. I gave them their own group, self-supervised, because they sit between the two classic types. Many of them are later fine-tuned with labeled examples.</p>
 
-    <p class="more-note">I also keep a <a href="https://kiranmaiveramareddy.github.io/ml-portfolio/" target="_blank" rel="noopener">weekly machine learning portfolio</a> and add something new to it every week.</p>
   </div>
 </section>
 
